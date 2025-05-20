@@ -18,7 +18,10 @@ export const middleware = async (request: NextRequest) => {
       return NextResponse.next();
     } else {
       return NextResponse.redirect(
-        new URL(`http://localhost:3000/?redirectPath=${pathname}`, request.url)
+        new URL(
+          `https://portfolio-dashboard-ivory.vercel.app/?redirectPath=${pathname}`,
+          request.url
+        )
       );
     }
   }
