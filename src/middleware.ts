@@ -9,10 +9,10 @@ const authRoutes = ["/login"];
 // };
 
 export const middleware = async (request: NextRequest) => {
-  console.log("hello world");
+  //("hello world");
   const { pathname } = request.nextUrl;
   const userInfo = await getCurrentUser();
-  // console.log('in',userInfo);
+  // //('in',userInfo);
   if (!userInfo) {
     if (authRoutes.includes(pathname)) {
       return NextResponse.next();

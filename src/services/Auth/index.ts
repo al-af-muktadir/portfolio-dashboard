@@ -15,7 +15,7 @@ export const loginUser = async (data: any) => {
   const result = await res.json();
 
   (await cookies()).set("accessToken", result.data);
-  // console.log(result);
+  // //(result);
 
   return result;
 };

@@ -13,12 +13,12 @@ const DashboardComp = () => {
     router.push(r);
   };
 
-  console.log("i amin dashboard", user);
+  //("i amin dashboard", user);
   const handleLogout = async () => {
     await logOut();
     setLoading(true);
     await refetchUser();
-    console.log(user, "inLOugbtn");
+    //(user, "inLOugbtn");
     setTimeout(() => {
       router.push("/");
     }, 100);

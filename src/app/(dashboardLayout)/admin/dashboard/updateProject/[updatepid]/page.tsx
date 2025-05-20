@@ -5,7 +5,7 @@ import React from "react";
 
 const page = async ({ params }: { params: any }) => {
   const pid = await params.updatepid;
-  console.log(pid);
+  //(pid);
 
   return (
     <div>

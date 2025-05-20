@@ -37,7 +37,7 @@ const UpdateBlogs = ({ id }: { id: string | number }) => {
     ? formData.category
     : data?.data[0]?.category;
   const content = formData.content ? formData.content : data?.data[0]?.content;
-  // console.log("sdad", category, content);
+  // //("sdad", category, content);
   const handleChange = (e: any) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -65,7 +65,7 @@ const UpdateBlogs = ({ id }: { id: string | number }) => {
         imageData
       );
 
-      console.log(cloudinaryRes?.data);
+      //(cloudinaryRes?.data);
       if (cloudinaryRes.data.asset_id) {
         const imageUrl = cloudinaryRes.data.secure_url;
         const BlogData = {
@@ -74,10 +74,10 @@ const UpdateBlogs = ({ id }: { id: string | number }) => {
           content: content,
           image: imageUrl,
         };
-        console.log("bdata", BlogData);
+        //("bdata", BlogData);
 
         const result = await updateblog({ id, blogs: BlogData });
-        console.log("after update", result);
+        //("after update", result);
         // //.log(result);
         //.log(result.data);
         if (result.data.success === true) {

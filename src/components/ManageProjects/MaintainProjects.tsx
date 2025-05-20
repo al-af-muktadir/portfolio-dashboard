@@ -19,7 +19,7 @@ const MaintainProjects = () => {
     refetchOnReconnect: true,
   });
 
-  console.log(data, "itsproject");
+  //(data, "itsproject");
 
   const [deleteProject] = useDeleteProjectsMutation();
   const handleDelete = async (id: string) => {

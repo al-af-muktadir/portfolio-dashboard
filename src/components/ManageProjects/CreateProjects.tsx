@@ -24,7 +24,7 @@ const CreateProjects = () => {
     link: string;
     additionalImages: File[];
   };
-  console.log(selected);
+  //(selected);
   const [formData, setFormData] = useState<Fdata>({
     name: "",
     description: "",
@@ -42,7 +42,7 @@ const CreateProjects = () => {
       ...formData,
       additionalImages: [...formData.additionalImages, e.target.files[0]],
     });
-    console.log("inhabnlfe", formData.additionalImages);
+    //("inhabnlfe", formData.additionalImages);
     //.log("inimagehandleafter", formData);
   };
   const handleImageChange = (e: any) => {
@@ -89,15 +89,15 @@ const CreateProjects = () => {
             `https://api.cloudinary.com/v1_1/drbmetoqj/image/upload`,
             additionalImageData
           );
-          console.log("res", res.data.secure_url);
+          //("res", res.data.secure_url);
           return res.data.secure_url;
         })
       );
-      console.log(cloudinaryRes?.data.asset_id && additionalURL.length > 0);
+      //(cloudinaryRes?.data.asset_id && additionalURL.length > 0);
       if (cloudinaryRes.data.asset_id) {
         const imageUrl = cloudinaryRes.data.secure_url;
 
-        console.log(imageUrl);
+        //(imageUrl);
         const ProjectsData = {
           name: formData.name,
           description: formData.description,
@@ -106,7 +106,7 @@ const CreateProjects = () => {
           additionalImages: additionalURL,
           techs: selected,
         };
-        console.log("pdata", ProjectsData);
+        //("pdata", ProjectsData);
 
         const result = await createProjects(ProjectsData);
         //.log(result);

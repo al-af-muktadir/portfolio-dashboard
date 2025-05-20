@@ -7,9 +7,9 @@ import React from "react";
 import { toast } from "sonner";
 
 const LoginForm = () => {
-  const { user, setLoading } = useUser();
+  const { setLoading } = useUser();
   const router = useRouter();
-  console.log("i am the user", user);
+  //("i am the user", user);
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -19,7 +19,7 @@ const LoginForm = () => {
       password,
     };
 
-    // console.log(data);
+    // //(data);
     const res = await loginUser(data);
 
     if (res?.success) {

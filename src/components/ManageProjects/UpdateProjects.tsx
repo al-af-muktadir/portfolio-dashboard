@@ -66,7 +66,7 @@ const UpdateProjects = ({ id }: { id: string | number }) => {
         imageData
       );
 
-      console.log(cloudinaryRes?.data);
+      //(cloudinaryRes?.data);
       if (cloudinaryRes.data.asset_id) {
         const imageUrl = cloudinaryRes.data.secure_url;
         const PData = {
@@ -75,10 +75,10 @@ const UpdateProjects = ({ id }: { id: string | number }) => {
 
           image: imageUrl,
         };
-        console.log("bdata", PData);
+        //("bdata", PData);
 
         const result = await updateProject({ id, project: PData });
-        console.log("after update", result);
+        //("after update", result);
         // //.log(result);
         //.log(result.data);
         if (result.data.success === true) {
