@@ -4,13 +4,16 @@ import { jwtDecode } from "jwt-decode";
 import { cookies } from "next/headers";
 
 export const loginUser = async (data: any) => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/auth/login`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  });
+  const res = await fetch(
+    "https://portfolio-backend-seven-mocha.vercel.app/api/auth/login",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }
+  );
 
   const result = await res.json();
 
