@@ -5,7 +5,7 @@ import { cookies } from "next/headers";
 
 export const loginUser = async (data: any) => {
   const res = await fetch(
-    "https://portfolio-backend-seven-mocha.vercel.app/api/auth/login",
+    "https://newbackendportfolio.vercel.app/api/auth/login",
     {
       method: "POST",
       headers: {
@@ -19,7 +19,7 @@ export const loginUser = async (data: any) => {
 
   (await cookies()).set("accessToken", result.data);
   // //(result);
-
+  console.log(result);
   return result;
 };
 
